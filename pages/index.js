@@ -1,16 +1,16 @@
 import Head from "next/head";
-// import Link from "next/link";
-import {useQuery} from 'urql'
+import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
-import  Product  from "../components/Product";
+import Product from "../components/Product";
+import { Gallery } from "../styles/Gallery";
 
 export default function Home() {
-  const [results] = useQuery({query: PRODUCT_QUERY})
-  const {data, fetching, error} = results;
+  const [results] = useQuery({ query: PRODUCT_QUERY });
+  const { data, fetching, error } = results;
 
-  if(fetching) return <p>Loading...</p>
-  if(error) return <p>Oh no... {error.message}</p>
-  
+  if (fetching) return <p>Loading...</p>;
+  if (error) return <p>Oh no... {error.message}</p>;
+
   const products = data.products.data;
 
   return (
@@ -22,7 +22,11 @@ export default function Home() {
       </Head>
 
       <main>
-    {products.map(product => <Product key={product.attributes.slug} product={product} />)}
+        <Gallery>
+          {products.map((product) => (
+            <Product key={product.attributes.slug} product={product} />
+          ))}
+        </Gallery>
       </main>
     </div>
   );
