@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 export const ProductStyle = styled.div`
-  background-color: white;
+  background: white;
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  /* border-radius: 2.5%; */
+  cursor: pointer;
   img {
     width: 100%;
-    cursor: pointer;
+    object-fit: cover;
   }
-
   h2 {
     padding: 0.5rem 0rem;
   }

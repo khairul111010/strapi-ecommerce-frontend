@@ -23,19 +23,16 @@ export const Quantity = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem 0rem;
-
   button {
     background: transparent;
     border: none;
     display: flex;
     font-size: 1.5rem;
   }
-
   p {
     width: 1rem;
     text-align: center;
   }
-
   span {
     color: var(--secondary);
   }
